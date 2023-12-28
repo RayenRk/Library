@@ -14,6 +14,9 @@ public class Livre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "titre")
+    private String titre;
+
     @Column(name = "auteur")
     private String auteur;
 

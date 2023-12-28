@@ -32,10 +32,10 @@ public class EmprunteController {
     @GetMapping("/addEmprunte")
     public String addEmprunte(Model model) {
         Emprunte emprunte = new Emprunte();
-        List<Etudiant> listeClient = etudiant.getAllEtudiant();
+        List<Etudiant> listeEtudiant= etudiant.getAllEtudiant();
         List<Livre> listeLivre = livre.getAllLivre();
         model.addAttribute("EmprunteForm", emprunte);
-        model.addAttribute("listClient", listeClient);
+        model.addAttribute("listEtudiant", listeEtudiant);
         model.addAttribute("listLivre", listeLivre);
         return "new_emprunte";
     }
@@ -49,10 +49,10 @@ public class EmprunteController {
     @GetMapping("/editEmprunte/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         Emprunte emprunte = emprunteServiceImpl.getEmprunteByID(id);
-        List<Etudiant> listeClient = etudiant.getAllEtudiant();
+        List<Etudiant> listeEtudiant = etudiant.getAllEtudiant();
         List<Livre> listeLivre = livre.getAllLivre();
         model.addAttribute("emprunte", emprunte);
-        model.addAttribute("listClient", listeClient);
+        model.addAttribute("listEtudiant", listeEtudiant);
         model.addAttribute("listLivre", listeLivre);
         return "update_emprunte";
     }

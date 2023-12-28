@@ -13,9 +13,9 @@ public class Emprunte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "date_debut")
+    @Column(name = "date_emprunte")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_debut;
+    private Date date_emprunte;
 
     @Column(name = "date_retour")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
